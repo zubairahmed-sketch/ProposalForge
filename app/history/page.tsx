@@ -111,7 +111,7 @@ export default function HistoryPage() {
             {/* Filters */}
             <div className="flex gap-2">
               <Input placeholder="Search…" value={search} onChange={(e) => setSearch(e.target.value)} className="flex-1" />
-              <Select value={filterType} onValueChange={setFilterType}>
+              <Select value={filterType} onValueChange={(v) => v && setFilterType(v)}>
                 <SelectTrigger className="w-36"><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All types</SelectItem>

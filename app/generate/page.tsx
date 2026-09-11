@@ -170,7 +170,7 @@ export default function GeneratePage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="platform">Platform</Label>
-                <Select value={platform} onValueChange={setPlatform}>
+                <Select value={platform} onValueChange={(v) => v && setPlatform(v)}>
                   <SelectTrigger id="platform"><SelectValue /></SelectTrigger>
                   <SelectContent>
                     <SelectItem value="peopleperhour">PeoplePerHour</SelectItem>
@@ -210,7 +210,7 @@ export default function GeneratePage() {
                   <Badge className={`${TYPE_COLORS[activeJobType ?? 'fullstack']}`}>
                     {TYPE_LABELS[activeJobType ?? 'fullstack']}
                   </Badge>
-                  <Select value={jobTypeOverride ?? classification.job_type} onValueChange={(v) => setJobTypeOverride(v as JobType)}>
+                  <Select value={jobTypeOverride ?? classification.job_type} onValueChange={(v) => v && setJobTypeOverride(v as JobType)}>
                     <SelectTrigger className="h-7 text-xs w-32"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       {Object.entries(TYPE_LABELS).map(([v, l]) => <SelectItem key={v} value={v}>{l}</SelectItem>)}
@@ -233,7 +233,7 @@ export default function GeneratePage() {
                 {/* Output type */}
                 <div className="space-y-2">
                   <Label htmlFor="output_type">Output Type</Label>
-                  <Select value={outputType} onValueChange={(v) => setOutputType(v as OutputType)}>
+                  <Select value={outputType} onValueChange={(v) => v && setOutputType(v as OutputType)}>
                     <SelectTrigger id="output_type"><SelectValue /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="pph_proposal">PPH Proposal</SelectItem>

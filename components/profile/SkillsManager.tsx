@@ -83,14 +83,14 @@ export default function SkillsManager() {
         </div>
         <div className="w-36 space-y-1">
           <label className="text-xs font-medium text-muted-foreground">Category</label>
-          <Select value={newCategory} onValueChange={(v) => setNewCategory(v as Skill['category'])}>
+          <Select value={newCategory} onValueChange={(v) => v && setNewCategory(v as Skill['category'])}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{SKILL_CATEGORIES.map((c) => <SelectItem key={c.value} value={c.value}>{c.label}</SelectItem>)}</SelectContent>
           </Select>
         </div>
         <div className="w-32 space-y-1">
           <label className="text-xs font-medium text-muted-foreground">Proficiency</label>
-          <Select value={newProficiency} onValueChange={(v) => setNewProficiency(v as Skill['proficiency'])}>
+          <Select value={newProficiency} onValueChange={(v) => v && setNewProficiency(v as Skill['proficiency'])}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>{PROFICIENCY_OPTIONS.map((p) => <SelectItem key={p.value} value={p.value}>{p.label}</SelectItem>)}</SelectContent>
           </Select>

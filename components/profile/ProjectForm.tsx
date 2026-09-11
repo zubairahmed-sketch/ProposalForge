@@ -142,7 +142,7 @@ export default function ProjectForm({ open, onOpenChange, editingProject, onSave
           </div>
           <div className="space-y-2">
             <Label htmlFor="proj-type">Project Type *</Label>
-            <Select value={form.project_type} onValueChange={(v) => setForm({ ...form, project_type: v as ProjectCreateInput['project_type'] })}>
+            <Select value={form.project_type} onValueChange={(v) => v && setForm({ ...form, project_type: v as ProjectCreateInput['project_type'] })}>
               <SelectTrigger id="proj-type"><SelectValue /></SelectTrigger>
               <SelectContent>
                 {PROJECT_TYPES.map((t) => (

@@ -101,7 +101,7 @@ export default function ProfileForm() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="tone_preference">Tone Preference</Label>
-          <Select value={profile.tone_preference ?? 'professional_friendly'} onValueChange={(v) => setProfile({ ...profile, tone_preference: v as Profile['tone_preference'] })}>
+          <Select value={profile.tone_preference ?? 'professional_friendly'} onValueChange={(v) => v && setProfile({ ...profile, tone_preference: v as Profile['tone_preference'] })}>
             <SelectTrigger id="tone_preference"><SelectValue /></SelectTrigger>
             <SelectContent>
               {TONE_OPTIONS.map((o) => (
