@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
 
+// Every page needs Supabase at runtime — skip static prerendering
+export const dynamic = 'force-dynamic';
+
 const inter = Inter({
   variable: "--font-sans",
   subsets: ["latin"],
